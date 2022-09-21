@@ -15,9 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from photo import views
+from photo import photo, views
 
 urlpatterns = [
+    # http://127.0.0.1:8000/photo/: 전체 사진 보기
+    path('', views.photo_list, name='photo_list'),
+
+    # http:127.0.0.1:8000/photo/new/ : 등록
+    path('new/', views.photo_post, name='photo_post'),
+
+    #http://127.0.0.1:8000/photo/1/ : 상세보기
+    path('<int:pk>/',views.photo_remove, name="photo_detail")
+
+
     path('admin/', admin.site.urls),
     
     # http://127.0.0.1:8000/

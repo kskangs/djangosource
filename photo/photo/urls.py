@@ -16,10 +16,19 @@ Including another URLconf
 
 from django.urls import path,include
 from . import views
+from photo import photo
 
 urlpatterns = [
-    path('', views.photo_list, name='phot_list'),
+    # http://127.0.0.1:8000/photo/ : 전체 사진 보기
+    path('', views.photo_list, name='photo_list'),
 
     # http://127.0.0.1:8000/photo/
     path('new/', views.photo_post, name='photo_post'),
+
+    path('<int:pk>/',views.photo_detail, name="photo_detail"),
+
+    path('<int:pk>/remove/', views.views.photo_remove, name="photo_remove"),
+
+    # http://127.0.0.1:8000/photo/1/edit
+
 ]

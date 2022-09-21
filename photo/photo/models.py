@@ -7,6 +7,7 @@ from django.db import models
 # Photo
 # 컬럼 : pk, 제목, 저작자, 이미지, 사진설명, 가격
 # 데이터 타입 : 숫자, 문자열, 문자열, 문자열(이미지 주소) ,문자열, 숫자
+
 # 문자열 : CharField(max_length 지정 필요), TextField()
 class Photo(models.Model):
    # 필드명 = 필드타입(조건.....)
